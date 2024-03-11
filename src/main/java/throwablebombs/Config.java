@@ -1,4 +1,4 @@
-package io.github.tw1zzler.throwablebombs;
+package throwablebombs;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
