@@ -2,6 +2,8 @@ package net.tw1zzler.throwablebombs;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -21,6 +23,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.tw1zzler.throwablebombs.entity.EntityInit;
 import org.slf4j.Logger;
 import static net.tw1zzler.throwablebombs.entity.EntityInit.*;
 import static net.tw1zzler.throwablebombs.item.CreativeModeTabs.CREATIVE_MODE_TABS;
@@ -61,10 +64,8 @@ public class ThrowableBombs
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
-        // Do something when the server starts
-        LOGGER.info("HELLO from server starting");
+    public void onServerStarting(ServerStartingEvent event) {
+
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
@@ -72,11 +73,8 @@ public class ThrowableBombs
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            // Some client setup code
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(THROWABLE_BOMB_PROJECTILE.get(), ThrownItemRenderer::new);
         }
     }
 }

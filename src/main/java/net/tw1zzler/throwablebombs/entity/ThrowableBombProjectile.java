@@ -1,12 +1,15 @@
 package net.tw1zzler.throwablebombs.entity;
 
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
-import net.tw1zzler.throwablebombs.item.ThrowableBombItem;
+
+import static net.tw1zzler.throwablebombs.entity.EntityInit.THROWABLE_BOMB_PROJECTILE;
+import static net.tw1zzler.throwablebombs.item.ItemInit.BLACK_BOMB;
 
 /**
  * Class describes logic for bombs as entities
@@ -14,20 +17,37 @@ import net.tw1zzler.throwablebombs.item.ThrowableBombItem;
  */
 public class ThrowableBombProjectile extends ThrowableItemProjectile {
 
-    private Explosion level;
 
     public ThrowableBombProjectile(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
+    public ThrowableBombProjectile(Level pLevel) {
+        super(THROWABLE_BOMB_PROJECTILE.get(), pLevel);
+    }
 
+    public ThrowableBombProjectile(Level pLevel, LivingEntity livingEntity) {
+        super(THROWABLE_BOMB_PROJECTILE.get(), livingEntity, pLevel);
+    }
+
+    @Override
+    protected Item getDefaultItem() {
+        return BLACK_BOMB.get();
+    }
+
+    @Override
     protected void onHitEntity(EntityHitResult ray) {
         super.onHitEntity(ray);
         // this, x, y, z, explosionStrength, setsFires, breakMode
-        this.level.explode();
     }
+
     @Override
-    protected Item getDefaultItem() {
-        return (new ThrowableBombItem(new Item.Properties()));
+    protected void onHitBlock(BlockHitResult pResult) {
+        if(!this.level().isClientSide()) {
+            this.level().broadcastEntityEvent(this, ((byte) 3));
+            this.level().explode(this, this.getX(), this.getY(0.0625), this.getZ(), 4.0F, Level.ExplosionInteraction.TNT);
+        }
+
+        super.onHitBlock(pResult);
     }
 }

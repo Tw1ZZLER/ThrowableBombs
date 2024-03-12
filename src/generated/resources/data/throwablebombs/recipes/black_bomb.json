@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:black_dye"
+    },
+    "G": {
+      "item": "minecraft:gunpowder"
+    },
+    "S": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " GS",
+    "GBG",
+    " G "
+  ],
+  "result": {
+    "count": 8,
+    "item": "throwablebombs:black_bomb"
+  },
+  "show_notification": true
+}
