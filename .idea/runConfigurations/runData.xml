@@ -8,7 +8,7 @@
     <module name="ThrowableBombs.main"/>
     <envs>
       <env name="MOD_CLASSES" value="throwablebombs%%$PROJECT_DIR$/build/resources/main:throwablebombs%%$PROJECT_DIR$/build/classes/java/main"/>
-      <env name="MCP_MAPPINGS" value="official_1.20.2"/>
+      <env name="MCP_MAPPINGS" value="parchment_2023.10.08-1.20.2"/>
     </envs>
     <method v="2">
       <option enabled="true" name="Make"/>
