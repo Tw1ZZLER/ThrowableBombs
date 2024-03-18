@@ -5,6 +5,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import net.tw1zzler.throwablebombs.item.CrawlingBombItem;
 
 import static net.tw1zzler.throwablebombs.ThrowableBombs.MODID;
 
@@ -21,4 +22,10 @@ public class EntityInit {
                     ThrowableBombProjectile::new, MobCategory.MISC)
                     .sized(0.5F, 0.5F)
                     .build("throwable_bomb_projectile"));
+
+    public static final RegistryObject<EntityType<CrawlingBombProjectile>> CRAWLING_BOMB_PROJECTILE = ENTITY_TYPES.register(
+            "crawling_bomb_projectile", () -> EntityType.Builder.<CrawlingBombProjectile>of(
+                    CrawlingBombProjectile::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F)
+                    .build("crawling_bomb_projectile"));
 }

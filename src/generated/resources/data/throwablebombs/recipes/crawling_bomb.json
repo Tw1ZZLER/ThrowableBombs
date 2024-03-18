@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": {
+      "item": "minecraft:spider_eye"
+    },
+    "G": {
+      "item": "minecraft:gunpowder"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "Y": {
+      "item": "minecraft:yellow_dye"
+    }
+  },
+  "pattern": [
+    "EGS",
+    "GYG",
+    "EGE"
+  ],
+  "result": {
+    "count": 8,
+    "item": "throwablebombs:crawling_bomb"
+  },
+  "show_notification": true
+}

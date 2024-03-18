@@ -1,6 +1,5 @@
 package net.tw1zzler.throwablebombs.datagen;
 
-import net.minecraft.client.renderer.block.ModelBlockRenderer;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -24,10 +23,10 @@ public class DataGenerators {
 
         // Server Providers (stuff the server needs)
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
-        generator.addProvider(event.includeServer(), ModLootTableGenerator.create(packOutput));
-        ModBlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(),
-                new ModBlockTagGenerator(packOutput, lookupProvider, existingFileHelper));
-        generator.addProvider(event.includeServer(), new ModItemTagGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), ModLootTableProvider.create(packOutput));
+        ModBlockTagProvider blockTagGenerator = generator.addProvider(event.includeServer(),
+                new ModBlockTagProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModItemTagProvider(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
 
         // Client Providers (stuff only the client needs)
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));

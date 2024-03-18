@@ -20,7 +20,8 @@ public class CreativeModeTabs {
             .withTabsBefore(net.minecraft.world.item.CreativeModeTabs.COMBAT)
             .icon(() -> BLACK_BOMB.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(BLACK_BOMB.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(BLACK_BOMB.get());
+                output.accept(CRAWLING_BOMB.get());
             })
             .build()
     );

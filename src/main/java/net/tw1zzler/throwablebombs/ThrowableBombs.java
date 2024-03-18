@@ -1,13 +1,8 @@
 package net.tw1zzler.throwablebombs;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -20,14 +15,13 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import net.tw1zzler.throwablebombs.entity.EntityInit;
 import org.slf4j.Logger;
-import static net.tw1zzler.throwablebombs.entity.EntityInit.*;
+
+import static net.tw1zzler.throwablebombs.entity.EntityInit.ENTITY_TYPES;
+import static net.tw1zzler.throwablebombs.entity.EntityInit.THROWABLE_BOMB_PROJECTILE;
 import static net.tw1zzler.throwablebombs.item.CreativeModeTabs.CREATIVE_MODE_TABS;
-import static net.tw1zzler.throwablebombs.item.ItemInit.*;
+import static net.tw1zzler.throwablebombs.item.ItemInit.ITEMS;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(ThrowableBombs.MODID)

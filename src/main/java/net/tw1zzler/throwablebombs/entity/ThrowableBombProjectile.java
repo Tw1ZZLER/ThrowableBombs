@@ -16,8 +16,6 @@ import static net.tw1zzler.throwablebombs.item.ItemInit.BLACK_BOMB;
  * @author tw1zzler
  */
 public class ThrowableBombProjectile extends ThrowableItemProjectile {
-
-
     public ThrowableBombProjectile(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -38,7 +36,11 @@ public class ThrowableBombProjectile extends ThrowableItemProjectile {
     @Override
     protected void onHitEntity(EntityHitResult ray) {
         super.onHitEntity(ray);
-        // this, x, y, z, explosionStrength, setsFires, breakMode
+        if(!this.level().isClientSide()) {
+            this.level().broadcastEntityEvent(this, ((byte) 3));
+            this.level().explode(this, this.getX(), this.getY(0.0625), this.getZ(), 4.0F, Level.ExplosionInteraction.TNT);
+        }
+        this.discard();
     }
 
     @Override
@@ -47,7 +49,6 @@ public class ThrowableBombProjectile extends ThrowableItemProjectile {
             this.level().broadcastEntityEvent(this, ((byte) 3));
             this.level().explode(this, this.getX(), this.getY(0.0625), this.getZ(), 4.0F, Level.ExplosionInteraction.TNT);
         }
-
-        super.onHitBlock(pResult);
+        this.discard();
     }
 }
