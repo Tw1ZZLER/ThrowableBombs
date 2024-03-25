@@ -22,10 +22,4 @@ public class EntityInit {
                     ThrowableBombProjectile::new, MobCategory.MISC)
                     .sized(0.5F, 0.5F)
                     .build("throwable_bomb_projectile"));
-
-    public static final RegistryObject<EntityType<CrawlingBombProjectile>> CRAWLING_BOMB_PROJECTILE = ENTITY_TYPES.register(
-            "crawling_bomb_projectile", () -> EntityType.Builder.<CrawlingBombProjectile>of(
-                    CrawlingBombProjectile::new, MobCategory.MISC)
-                    .sized(0.5F, 0.5F)
-                    .build("crawling_bomb_projectile"));
 }

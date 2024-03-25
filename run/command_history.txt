@@ -15,3 +15,5 @@
 /toggledownfall
 /weather clear
 /kill @e
+/gamemode survival
+/give Dev minecraft:spider_eye

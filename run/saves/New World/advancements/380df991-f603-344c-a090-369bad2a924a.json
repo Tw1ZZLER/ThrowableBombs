@@ -1,15 +1,27 @@
 {
+  "minecraft:recipes/brewing/fermented_spider_eye": {
+    "criteria": {
+      "has_spider_eye": "2024-03-25 02:30:54 -0400"
+    },
+    "done": true
+  },
   "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "unlock_right_away": "2024-03-15 01:10:09 -0400"
+      "unlock_right_away": "2024-03-25 02:29:48 -0400"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:birch_forest": "2024-03-15 01:10:13 -0400"
+      "minecraft:savanna": "2024-03-25 02:29:55 -0400"
     },
     "done": false
+  },
+  "throwablebombs:recipes/combat/crawling_bomb": {
+    "criteria": {
+      "has_spider_eye": "2024-03-25 02:30:54 -0400"
+    },
+    "done": true
   },
   "DataVersion": 3578
 }

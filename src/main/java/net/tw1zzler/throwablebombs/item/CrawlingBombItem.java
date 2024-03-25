@@ -9,8 +9,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.tw1zzler.throwablebombs.entity.CrawlingBombProjectile;
-import net.tw1zzler.throwablebombs.entity.ThrowableBombProjectile;
 
 public class CrawlingBombItem extends Item {
     public CrawlingBombItem(Item.Properties properties) {
@@ -20,23 +18,23 @@ public class CrawlingBombItem extends Item {
     /**
      * Override method for bomb to be thrown when used...
      */
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
-        ItemStack itemStack = pPlayer.getItemInHand(pHand);
-        pLevel.playSound((Player)null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
-                SoundEvents.TNT_PRIMED, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F));
-        if (!pLevel.isClientSide) {
-            CrawlingBombProjectile projectile = new CrawlingBombProjectile(pLevel, pPlayer);
-            projectile.setItem(itemStack);
-            projectile.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 1.5F, 1.0F);
-            pLevel.addFreshEntity(projectile);
-        }
-
-        pPlayer.awardStat(Stats.ITEM_USED.get(this));
-        if (!pPlayer.getAbilities().instabuild) {
-            itemStack.shrink(1);
-        }
-
-        return InteractionResultHolder.sidedSuccess(itemStack, pLevel.isClientSide());
-    }
+//    @Override
+//    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
+//        ItemStack itemStack = pPlayer.getItemInHand(pHand);
+//        pLevel.playSound((Player)null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(),
+//                SoundEvents.TNT_PRIMED, SoundSource.NEUTRAL, 0.5F, 0.4F / (pLevel.getRandom().nextFloat() * 0.4F + 0.8F));
+//        if (!pLevel.isClientSide) {
+//            CrawlingBombProjectile projectile = new CrawlingBombProjectile(pLevel, pPlayer);
+//            projectile.setItem(itemStack);
+//            projectile.shootFromRotation(pPlayer, pPlayer.getXRot(), pPlayer.getYRot(), 0.0F, 1.5F, 1.0F);
+//            pLevel.addFreshEntity(projectile);
+//        }
+//
+//        pPlayer.awardStat(Stats.ITEM_USED.get(this));
+//        if (!pPlayer.getAbilities().instabuild) {
+//            itemStack.shrink(1);
+//        }
+//
+//        return InteractionResultHolder.sidedSuccess(itemStack, pLevel.isClientSide());
+//    }
 }
