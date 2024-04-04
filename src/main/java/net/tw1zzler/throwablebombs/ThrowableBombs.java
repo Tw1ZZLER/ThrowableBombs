@@ -18,8 +18,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
-import static net.tw1zzler.throwablebombs.entity.EntityInit.ENTITY_TYPES;
-import static net.tw1zzler.throwablebombs.entity.EntityInit.THROWABLE_BOMB_PROJECTILE;
+import static net.tw1zzler.throwablebombs.entity.EntityInit.*;
 import static net.tw1zzler.throwablebombs.item.CreativeModeTabs.CREATIVE_MODE_TABS;
 import static net.tw1zzler.throwablebombs.item.ItemInit.ITEMS;
 
@@ -68,7 +67,10 @@ public class ThrowableBombs
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            // Setup all thrown item renderers
+
             EntityRenderers.register(THROWABLE_BOMB_PROJECTILE.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(CRAWLING_BOMB_PROJECTILE.get(), ThrownItemRenderer::new);
         }
     }
 }

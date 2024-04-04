@@ -1,11 +1,14 @@
 package net.tw1zzler.throwablebombs.entity;
 
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.tw1zzler.throwablebombs.item.CrawlingBombItem;
+
+import java.util.ArrayList;
 
 import static net.tw1zzler.throwablebombs.ThrowableBombs.MODID;
 
@@ -28,4 +31,9 @@ public class EntityInit {
                     CrawlingBombProjectile::new, MobCategory.MISC)
                     .sized(0.5F, 0.5F)
                     .build("crawling_bomb_projectile"));
+
+
+    public static final ArrayList<RegistryObject<EntityType<?>>> projectileArray = new ArrayList<>();
+    projectileArray.add(THROWABLE_BOMB_PROJECTILE);
+    projectileArray.add(CRAWLING_BOMB_PROJECTILE);
 }

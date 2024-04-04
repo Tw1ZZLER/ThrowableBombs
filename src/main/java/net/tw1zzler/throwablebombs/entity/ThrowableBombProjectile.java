@@ -11,10 +11,6 @@ import net.minecraft.world.phys.EntityHitResult;
 import static net.tw1zzler.throwablebombs.entity.EntityInit.THROWABLE_BOMB_PROJECTILE;
 import static net.tw1zzler.throwablebombs.item.ItemInit.BLACK_BOMB;
 
-/**
- * Class describes logic for bombs as entities
- * @author tw1zzler
- */
 public class ThrowableBombProjectile extends ThrowableItemProjectile {
     public ThrowableBombProjectile(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);

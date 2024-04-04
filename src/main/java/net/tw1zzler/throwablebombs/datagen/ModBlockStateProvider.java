@@ -4,7 +4,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
-
 import static net.tw1zzler.throwablebombs.ThrowableBombs.MODID;
 
 public class ModBlockStateProvider extends net.minecraftforge.client.model.generators.BlockStateProvider {
