@@ -31,9 +31,4 @@ public class EntityInit {
                     CrawlingBombProjectile::new, MobCategory.MISC)
                     .sized(0.5F, 0.5F)
                     .build("crawling_bomb_projectile"));
-
-
-    public static final ArrayList<RegistryObject<EntityType<?>>> projectileArray = new ArrayList<>();
-    projectileArray.add(THROWABLE_BOMB_PROJECTILE);
-    projectileArray.add(CRAWLING_BOMB_PROJECTILE);
 }
