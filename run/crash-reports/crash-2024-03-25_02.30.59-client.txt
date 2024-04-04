@@ -1,0 +1,222 @@
+---- Minecraft Crash Report ----
+// I let you down. Sorry :(
+
+Time: 2024-03-25 02:30:59
+Description: Rendering screen
+
+java.lang.IllegalAccessError: class mezz.jei.forge.platform.ScreenHelper tried to access private field net.minecraft.client.gui.screens.recipebook.RecipeBookComponent.width (mezz.jei.forge.platform.ScreenHelper is in module jei@16.0.0.28 of loader 'TRANSFORMER' @6d67f5eb; net.minecraft.client.gui.screens.recipebook.RecipeBookComponent is in module minecraft@1.20.2 of loader 'TRANSFORMER' @6d67f5eb)
+	at mezz.jei.forge.platform.ScreenHelper.getBookArea(ScreenHelper.java:46) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.gui.GuiProperties.create(GuiProperties.java:33) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.library.gui.ScreenHelper.getGuiProperties(ScreenHelper.java:66) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at java.util.Optional.flatMap(Optional.java:289) ~[?:?] {}
+	at mezz.jei.gui.overlay.ScreenPropertiesCache.updateScreen(ScreenPropertiesCache.java:24) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.gui.overlay.IngredientListOverlay.updateScreen(IngredientListOverlay.java:110) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.gui.events.GuiEventHandler.onDrawBackgroundPost(GuiEventHandler.java:69) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.forge.startup.EventRegistration.lambda$registerGuiHandler$12(EventRegistration.java:98) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.core.util.WeakConsumer.accept(WeakConsumer.java:17) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:245) ~[eventbus-6.2.0.jar%23100!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:237) ~[eventbus-6.2.0.jar%23100!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:300) ~[eventbus-6.2.0.jar%23100!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:281) ~[eventbus-6.2.0.jar%23100!/:?] {}
+	at net.minecraft.client.gui.screens.Screen.renderBackground(Screen.java:363) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderBackground(AbstractContainerScreen.java:153) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.Screen.render(Screen.java:118) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:92) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen.render(EffectRenderingInventoryScreen.java:32) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.InventoryScreen.render(InventoryScreen.java:83) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.Screen.renderWithTooltip(Screen.java:109) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraftforge.client.ForgeHooksClient.drawScreenInternal(ForgeHooksClient.java:395) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23177%23183!/:?] {re:classloading}
+	at net.minecraftforge.client.ForgeHooksClient.drawScreen(ForgeHooksClient.java:389) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23177%23183!/:?] {re:classloading}
+	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:966) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1211) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:781) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:221) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:98) ~[fmlloader-1.20.2-48.1.0.jar%2391!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:82) ~[fmlloader-1.20.2-48.1.0.jar%2391!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:17) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:40) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:58) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:96) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:66) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:13) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:10) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at net.minecraftforge.bootstrap.BootstrapLauncher.main(BootstrapLauncher.java:126) ~[bootstrap-1.2.0.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Suspected Mod: 
+	Just Enough Items (jei), Version: 16.0.0.28
+		Issue tracker URL: https://github.com/mezz/JustEnoughItems/issues?q=is%3Aissue
+		at TRANSFORMER/jei@16.0.0.28/mezz.jei.forge.platform.ScreenHelper.getBookArea(ScreenHelper.java:46)
+Stacktrace:
+	at mezz.jei.forge.platform.ScreenHelper.getBookArea(ScreenHelper.java:46) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.gui.GuiProperties.create(GuiProperties.java:33) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.library.gui.ScreenHelper.getGuiProperties(ScreenHelper.java:66) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at java.util.Optional.flatMap(Optional.java:289) ~[?:?] {}
+	at mezz.jei.gui.overlay.ScreenPropertiesCache.updateScreen(ScreenPropertiesCache.java:24) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.gui.overlay.IngredientListOverlay.updateScreen(IngredientListOverlay.java:110) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.gui.events.GuiEventHandler.onDrawBackgroundPost(GuiEventHandler.java:69) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.forge.startup.EventRegistration.lambda$registerGuiHandler$12(EventRegistration.java:98) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at mezz.jei.core.util.WeakConsumer.accept(WeakConsumer.java:17) ~[jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.10.08-1.20.2.jar%23186!/:16.0.0.28] {re:classloading}
+	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:245) ~[eventbus-6.2.0.jar%23100!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:237) ~[eventbus-6.2.0.jar%23100!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:300) ~[eventbus-6.2.0.jar%23100!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:281) ~[eventbus-6.2.0.jar%23100!/:?] {}
+	at net.minecraft.client.gui.screens.Screen.renderBackground(Screen.java:363) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.renderBackground(AbstractContainerScreen.java:153) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.Screen.render(Screen.java:118) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.AbstractContainerScreen.render(AbstractContainerScreen.java:92) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen.render(EffectRenderingInventoryScreen.java:32) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.inventory.InventoryScreen.render(InventoryScreen.java:83) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.gui.screens.Screen.renderWithTooltip(Screen.java:109) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraftforge.client.ForgeHooksClient.drawScreenInternal(ForgeHooksClient.java:395) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23177%23183!/:?] {re:classloading}
+	at net.minecraftforge.client.ForgeHooksClient.drawScreen(ForgeHooksClient.java:389) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23177%23183!/:?] {re:classloading}
+-- Screen render details --
+Details:
+	Screen name: net.minecraft.client.gui.screens.inventory.InventoryScreen
+	Mouse location: Scaled: (241, 108). Absolute: (964.000000, 435.000000)
+	Screen size: Scaled: (420, 242). Absolute: (1680, 966). Scale factor of 4.000000
+Stacktrace:
+	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:966) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1211) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:781) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:221) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:98) ~[fmlloader-1.20.2-48.1.0.jar%2391!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:82) ~[fmlloader-1.20.2-48.1.0.jar%2391!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:17) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:40) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:58) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:96) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:66) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:13) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:10) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at net.minecraftforge.bootstrap.BootstrapLauncher.main(BootstrapLauncher.java:126) ~[bootstrap-1.2.0.jar:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [LocalPlayer['Dev'/42, l='ClientLevel', x=-215.80, y=70.00, z=-20.28]]
+	Chunk stats: 961, 609
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-192,68,-32), Section: (at 0,4,0 in -12,4,-2; chunk contains blocks -192,-64,-32 to -177,319,-17), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,-64,-512 to -1,319,-1)
+	Level time: 1264 game time, 1264 day time
+	Server brand: forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.ClientLevel.fillReportDetails(ClientLevel.java:448) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.fillReport(Minecraft.java:2395) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:798) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:221) ~[forge-1.20.2-48.1.0_mapped_official_1.20.2.jar%23178!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:98) ~[fmlloader-1.20.2-48.1.0.jar%2391!/:?] {}
+	at net.minecraftforge.fml.loading.targets.CommonLaunchHandler.lambda$makeService$0(CommonLaunchHandler.java:82) ~[fmlloader-1.20.2-48.1.0.jar%2391!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:17) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:40) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:58) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:96) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:66) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:13) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:10) ~[modlauncher-10.1.1.jar%23103!/:?] {}
+	at net.minecraftforge.bootstrap.BootstrapLauncher.main(BootstrapLauncher.java:126) ~[bootstrap-1.2.0.jar:?] {}
+
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla, mod_resources
+
+-- System Details --
+Details:
+	Minecraft Version: 1.20.2
+	Minecraft Version ID: 1.20.2
+	Operating System: Linux (amd64) version 6.1.80-1-MANJARO
+	Java Version: 17.0.10, N/A
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 622424240 bytes (593 MiB) / 1799356416 bytes (1716 MiB) up to 4173332480 bytes (3980 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 3600 6-Core Processor
+	Identifier: AuthenticAMD Family 23 Model 113 Stepping 0
+	Microarchitecture: Zen 2
+	Frequency (GHz): -0.00
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: GM206 [GeForce GTX 950]
+	Graphics card #0 vendor: NVIDIA Corporation (0x10de)
+	Graphics card #0 VRAM (MB): 288.00
+	Graphics card #0 deviceId: 0x1402
+	Graphics card #0 versionInfo: unknown
+	Graphics card #1 name: Navi 22 [Radeon RX 6700/6700 XT/6750 XT / 6800M/6850M XT]
+	Graphics card #1 vendor: Advanced Micro Devices, Inc. [AMD/ATI] (0x1002)
+	Graphics card #1 VRAM (MB): 258.00
+	Graphics card #1 deviceId: 0x73df
+	Graphics card #1 versionInfo: unknown
+	Virtual memory max (MB): 16149.00
+	Virtual memory used (MB): 14715.28
+	Swap memory total (MB): 8192.00
+	Swap memory used (MB): 1879.50
+	JVM Flags: 0 total; 
+	JVM uptime in seconds: 116.01
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.3.2+13
+	Backend API: AMD Radeon RX 6700 XT (radeonsi, navi22, LLVM 16.0.6, DRM 3.49, 6.1.80-1-MANJARO) GL version 4.6 (Core Profile) Mesa 24.0.2-manjaro1.1, AMD
+	Window size: 1680x966
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: en_us
+	Locale: en_US
+	CPU: 12x AMD Ryzen 5 3600 6-Core Processor
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/42, l='ServerLevel[New World]', x=-215.80, y=70.00, z=-20.28]]
+	Data Packs: vanilla, mod:throwablebombs, mod:forge, mod:jei (incompatible)
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	ModLauncher: 10.1.1
+	ModLauncher launch target: forge_userdev_client
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		mixin-0.8.5.jar mixin PLUGINSERVICE 
+		eventbus-6.2.0.jar eventbus PLUGINSERVICE 
+		fmlloader-1.20.2-48.1.0.jar slf4jfixer PLUGINSERVICE 
+		fmlloader-1.20.2-48.1.0.jar object_holder_definalize PLUGINSERVICE 
+		fmlloader-1.20.2-48.1.0.jar runtime_enum_extender PLUGINSERVICE 
+		fmlloader-1.20.2-48.1.0.jar capability_token_subclass PLUGINSERVICE 
+		accesstransformers-8.1.1.jar accesstransformer PLUGINSERVICE 
+		fmlloader-1.20.2-48.1.0.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-10.1.1.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-10.1.1.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		lowcodefml@48
+		javafml@null
+	Mod List: 
+		forge-1.20.2-48.1.0_mapped_official_1.20.2.jar    |Minecraft                     |minecraft                     |1.20.2              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		main                                              |Throwable Bombs               |throwablebombs                |1.20.2-0.0.1.0      |DONE      |Manifest: NOSIGNATURE
+		                                                  |Forge                         |forge                         |48.1.0              |DONE      |Manifest: NOSIGNATURE
+		jei-1.20.2-forge-16.0.0.28_mapped_parchment_2023.1|Just Enough Items             |jei                           |16.0.0.28           |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 361fc333-cb9c-4b0d-b06e-b1379a36e946
+	FML: 48.1
+	Forge: net.minecraftforge:48.1.0
