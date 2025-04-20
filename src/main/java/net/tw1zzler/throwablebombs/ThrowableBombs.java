@@ -69,7 +69,7 @@ public class ThrowableBombs
         public static void onClientSetup(FMLClientSetupEvent event) {
             // Setup all thrown item renderers
 
-            EntityRenderers.register(THROWABLE_BOMB_PROJECTILE.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(BLACK_BOMB_PROJECTILE.get(), ThrownItemRenderer::new);
             EntityRenderers.register(CRAWLING_BOMB_PROJECTILE.get(), ThrownItemRenderer::new);
         }
     }

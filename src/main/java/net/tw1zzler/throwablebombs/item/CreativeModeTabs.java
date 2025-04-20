@@ -16,7 +16,7 @@ public class CreativeModeTabs {
     // Creates a creative tab with the id "throwablebombs:example_tab" for the example item, that is placed after the combat tab
     public static final RegistryObject<CreativeModeTab> THROWABLE_BOMBS_TAB = CREATIVE_MODE_TABS.register("throwable_bombs_tab",
             () -> CreativeModeTab.builder()
-            .title(Component.translatable("creativetab.throwablebombs_tab"))
+            .title(Component.translatable("creativetab.throwable_bombs_tab"))
             .withTabsBefore(net.minecraft.world.item.CreativeModeTabs.COMBAT)
             .icon(() -> BLACK_BOMB.get().getDefaultInstance())
             .displayItems((parameters, output) -> {

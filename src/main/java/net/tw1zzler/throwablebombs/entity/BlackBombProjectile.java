@@ -9,19 +9,26 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import org.jetbrains.annotations.NotNull;
 
+import static net.tw1zzler.throwablebombs.entity.EntityInit.BLACK_BOMB_PROJECTILE;
 import static net.tw1zzler.throwablebombs.item.ItemInit.BLACK_BOMB;
 
-public abstract class ThrowableBombProjectile extends ThrowableItemProjectile {
+public class BlackBombProjectile extends ThrowableBombProjectile {
 
-	public ThrowableBombProjectile(EntityType<? extends ThrowableItemProjectile> pEntityType, Level pLevel) {
+	public BlackBombProjectile(EntityType<? extends ThrowableBombProjectile> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
+	}
+
+	public BlackBombProjectile() {
+		Level pLevel = null;
+		EntityType<BlackBombProjectile> pEntityType = null;
+		BlackBombProjectile(pEntityType, pLevel);
 	}
 
 	@Override
     protected Item getDefaultItem() {
         return BLACK_BOMB.get();
     }
-	
+
     @Override
     protected void onHitEntity(EntityHitResult ray) {
         super.onHitEntity(ray);
